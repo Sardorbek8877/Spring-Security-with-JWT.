@@ -2,10 +2,12 @@ package bek.uz.securityjwt.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
 @Table(name = "roles")
+@NoArgsConstructor
 public class Role {
 
     @Id
@@ -15,4 +17,8 @@ public class Role {
 
     @Column(name = "name")
     private String name;
+
+    public Role(String name) {
+        this.name = name;
+    }
 }
